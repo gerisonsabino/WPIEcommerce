@@ -10,7 +10,7 @@ import classes.Conexao;
 
 public class GeneroDAO 
 {
-    public Genero SelectGeneroByID(int id)
+    public Genero selectGeneroByID(int id)
     {
         Genero g = null;
         
@@ -47,7 +47,7 @@ public class GeneroDAO
         return g;
     }
     
-    public ArrayList<Genero> SelectGeneros()
+    public ArrayList<Genero> selectGeneros()
     {
         ArrayList<Genero> generos = new ArrayList<Genero>();
         

@@ -45,7 +45,7 @@
         <h6 class="widget-title mb-10">Plataforma</h6>
         <div class="catagories-menu">
             <%                
-                ArrayList<Plataforma> plataformas = new PlataformaDAO().SelectPlataformas();
+                ArrayList<Plataforma> plataformas = new PlataformaDAO().selectPlataformas();
 
                 out.println("<ul>");
                 
@@ -54,9 +54,9 @@
                     Plataforma plataforma = plataformas.get(i);
                     
                     if (idP > 0 && idP == plataforma.getId())
-                        out.println("<li class='active'><a href='explorar.jsp?plataforma=" + (plataforma.getId() + (idG > 0 ? "&genero=" + idG : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + plataforma.getNome().toLowerCase() + "</a></li>");
+                        out.println("<li class='active'><a href='explorar.jsp?plataforma=" + (plataforma.getId() + (idG > 0 ? "&genero=" + idG : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + plataforma.getNome().toLowerCase()  + "<span> (" + plataforma.countGames() + ")</span></a></li>");
                     else if (idP == 0)
-                        out.println("<li><a href='explorar.jsp?plataforma=" + (plataforma.getId() + (idG > 0 ? "&genero=" + idG : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + plataforma.getNome().toLowerCase() + "</a></li>");
+                        out.println("<li><a href='explorar.jsp?plataforma=" + (plataforma.getId() + (idG > 0 ? "&genero=" + idG : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + plataforma.getNome().toLowerCase() + "<span> (" + plataforma.countGames() + ")</span></a></li>");
                 }
                 
                 out.println("</ul>");
@@ -67,7 +67,7 @@
         <h6 class="widget-title mb-10">Gênero</h6>
         <div class="catagories-menu">
             <%
-                ArrayList<Genero> generos = new GeneroDAO().SelectGeneros();
+                ArrayList<Genero> generos = new GeneroDAO().selectGeneros();
 
                 out.println("<ul>");
                 for (int i = 0; i < generos.size(); i++) 
@@ -88,7 +88,7 @@
         <h6 class="widget-title mb-10">Desenvolvedor</h6>
         <div class="catagories-menu">
             <%
-                ArrayList<Desenvolvedor> desenvolvedores = new DesenvolvedorDAO().SelectDesenvolvedores();
+                ArrayList<Desenvolvedor> desenvolvedores = new DesenvolvedorDAO().selectDesenvolvedores();
 
                 out.println("<ul>");
                 

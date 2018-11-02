@@ -35,7 +35,7 @@
         <div class="products-catagories-area clearfix">
             <div class="amado-pro-catagory clearfix">
                 <%
-                    ArrayList<Game> games = new GameDAO().SelectGames();
+                    ArrayList<Game> games = new GameDAO().selectGames();
                     
                     for (int i = 0; i < games.size(); i++) {
                         Game game = games.get(i);

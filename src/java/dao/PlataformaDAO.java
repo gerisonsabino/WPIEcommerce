@@ -4,13 +4,12 @@ import classes.Plataforma;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
 import classes.Conexao;
 
 public class PlataformaDAO 
 {
-    public Plataforma SelectPlataformaByID(int id)
+    public Plataforma selectPlataformaByID(int id)
     {
         Plataforma p = null;
         
@@ -47,7 +46,7 @@ public class PlataformaDAO
         return p;
     }
     
-    public ArrayList<Plataforma> SelectPlataformas()
+    public ArrayList<Plataforma> selectPlataformas()
     {
         ArrayList<Plataforma> plataformas = new ArrayList<Plataforma>();
         
@@ -55,10 +54,11 @@ public class PlataformaDAO
         {
             Connection con = Conexao.getConnection();
             
-            Statement stmt = con.createStatement();
             String sql = "SELECT * FROM game_plataforma";
             
-            ResultSet rs = stmt.executeQuery(sql);
+            PreparedStatement ps = con.prepareStatement(sql);
+            
+            ResultSet rs = ps.executeQuery(sql);
             
             while (rs.next()) 
             {
@@ -71,9 +71,8 @@ public class PlataformaDAO
             }
             
             rs.close();
-            stmt.close();
+            ps.close();
             con.close();
-            
         } 
         catch (Exception e) 
         {

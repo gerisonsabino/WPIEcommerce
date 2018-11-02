@@ -20,7 +20,7 @@
             <img src="assets/img/tg.png" alt="This.Games" />
         </a>
     </div>
-    <nav class="amado-nav">
+    <!-- <nav class="amado-nav">
         <ul>
             <li class="active">
                 <a href="index.jsp">Início</a>
@@ -29,12 +29,19 @@
                 <a href="explorar.jsp">Explorar</a>
             </li>
         </ul>
-    </nav>
+    </nav> -->
     <div class="cart-fav-search mb-50">
+        <a href="index.jsp" class="cart-nav">
+            <img src="assets/img/core-img/inicio.png" alt="Início"/>Início
+        </a>
+        <a href="explorar.jsp" class="cart-nav">
+            <img src="assets/img/core-img/explorar.png" alt="Explorar"/>Explorar
+        </a>
         <a href="#" class="search-nav">
-            <img src="assets/img/core-img/search.png" alt="" />Pesquisar</a>
-        <a href="cart.html" class="cart-nav">
-            <img src="assets/img/core-img/cart.png" alt="" />Carrinho <span>(0)</span>
+            <img src="assets/img/core-img/search.png" alt="Pesquisar" />Pesquisar
+        </a>
+        <a href="carrinho.jsp" class="cart-nav">
+            <img src="assets/img/core-img/cart.png" alt="Carrinho" />Carrinho <span>(0)</span>
         </a>
     </div>
     <!-- <div class="amado-btn-group mt-30 mb-100">

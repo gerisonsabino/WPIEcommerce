@@ -3,7 +3,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    Game game = new GameDAO().SelectGameByID(Integer.parseInt(request.getParameter("id")));
+    Game game = new GameDAO().selectGameByID(Integer.parseInt(request.getParameter("id")));
 %>
 
 <!DOCTYPE html>

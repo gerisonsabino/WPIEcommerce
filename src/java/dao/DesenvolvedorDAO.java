@@ -10,7 +10,7 @@ import classes.Conexao;
 
 public class DesenvolvedorDAO 
 {
-    public Desenvolvedor SelectDesenvolvedorByID(int id)
+    public Desenvolvedor selectDesenvolvedorByID(int id)
     {
         Desenvolvedor dev = null;
         
@@ -47,7 +47,7 @@ public class DesenvolvedorDAO
         return dev;
     }
     
-    public ArrayList<Desenvolvedor> SelectDesenvolvedores()
+    public ArrayList<Desenvolvedor> selectDesenvolvedores()
     {
         ArrayList<Desenvolvedor> desenvolvedores = new ArrayList<Desenvolvedor>();
         

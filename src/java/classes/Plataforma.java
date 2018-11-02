@@ -1,5 +1,7 @@
 package classes;
 
+import java.util.ArrayList;
+
 public class Plataforma 
 {
     private int id;
@@ -19,5 +21,10 @@ public class Plataforma
 
     public void setNome(String nome) {
         this.nome = nome;
-    }    
+    }
+    
+    public int countGames()
+    {
+        return 0;
+    }
 }

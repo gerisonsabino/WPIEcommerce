@@ -123,7 +123,7 @@ public class Game
         
         Locale locale = new Locale("pt", "BR");
         Currency currentCurrency = Currency.getInstance(locale);
-        NumberFormat currencyFormatter = new java.text.DecimalFormat("###,###,###.00");
+        NumberFormat currencyFormatter = new java.text.DecimalFormat("###,###,##0.00");
         NumberFormat.getCurrencyInstance(locale);
 
         return currentCurrency.getSymbol() + " " + currencyFormatter.format(currencyAmount);

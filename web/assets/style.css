@@ -45,3 +45,7 @@
     .single-product-wrapper .product-img img {
         max-height: 425px !important;
     }
+    
+    .main-content-wrapper .cart-table-area .cart-summary {
+        margin-top: 0px !important;
+    }
