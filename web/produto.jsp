@@ -1,0 +1,101 @@
+<%-- 
+    Document   : produto
+    Created on : 02/11/2018, 05:02:06
+    Author     : VBSNET-5
+--%>
+<%@page import="classes.Game"%>
+<%@page import="dao.GameDAO"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    Game game = new GameDAO().SelectGameByID(Integer.parseInt(request.getParameter("id")));
+%>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title><% out.println(game.getTitulo() + " - " + game.getPlataforma().getNome()); %> | This.Game</title>
+
+        <link rel="icon" href="img/core-img/favicon.ico">
+
+        <link href="assets/css/core-style.css" rel="stylesheet" type="text/css" />
+        <link href="assets/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <!-- Search Wrapper Area Start -->
+        <jsp:include page="views/parciais/pesquisa.jsp" />
+        <!-- Search Wrapper Area End -->
+        
+        <!-- ##### Main Content Wrapper Start ##### -->
+        <div class="main-content-wrapper d-flex clearfix">
+            <!-- Header Area Start -->
+            <jsp:include page="views/parciais/header.jsp" />
+            <!-- Header Area End -->
+
+            <!-- Product Details Area Start -->
+            <div class="single-product-area section-padding-100 clearfix">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 col-lg-7">
+                            <div class="single_product_thumb">
+                                <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <a class="gallery_img" href="<%out.println(game.getImagemUrl());%>">
+                                                <img class="d-block w-100" src="<%out.println(game.getImagemUrl());%>" alt="<%out.println(game.getTitulo() + " - " + game.getPlataforma().getNome());%>">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-5">
+                            <div class="single_product_desc">
+                                <!-- Product Meta Data -->
+                                <div class="product-meta-data">
+                                    <div class="line"></div>
+                                    <p class="product-price"><% out.println(game.getPrecoFormatado()); %></p>
+                                    <a href="produto.jsp?id=<% out.println(game.getId()); %>">
+                                        <h6><%out.println(game.getTitulo() + " - " + game.getPlataforma().getNome());%></h6>
+                                    </a>
+                                    <!-- Avaiable -->
+                                    <p class="avaibility"><i class="fa fa-circle"></i> Em estoque</p>
+                                </div>
+
+                                <div class="short_overview my-5">
+                                    <p><% out.println(game.getDescricao()); %></p>
+                                </div>
+
+                                <!-- Add to Cart Form -->
+                                <form class="cart clearfix" method="post">
+                                    <div class="cart-btn d-flex mb-50">
+                                        <p>Quantidade</p>
+                                        <div class="quantity">
+                                            <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                                            <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="1">
+                                            <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-caret-up" aria-hidden="true"></i></span>
+                                        </div>
+                                    </div>
+                                    <button type="submit" name="addtocart" value="5" class="btn amado-btn">Adicionar ao Carrinho</button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product Details Area End -->
+        </div>
+        <!-- ##### Main Content Wrapper End ##### -->
+        
+        <!-- ##### Footer Area Start ##### -->
+        <jsp:include page="views/parciais/footer.jsp" />
+        <!-- ##### Footer Area End ##### -->
+        <jsp:include page="views/parciais/scripts.jsp" />
+    </body>
+</html>
