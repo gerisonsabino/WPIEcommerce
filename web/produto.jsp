@@ -1,8 +1,3 @@
-<%-- 
-    Document   : produto
-    Created on : 02/11/2018, 05:02:06
-    Author     : VBSNET-5
---%>
 <%@page import="classes.Game"%>
 <%@page import="dao.GameDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
