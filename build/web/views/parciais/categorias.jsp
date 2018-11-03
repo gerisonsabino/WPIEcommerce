@@ -49,14 +49,18 @@
 
                 out.println("<ul>");
                 
-                for (int i = 0; i < plataformas.size(); i++) 
+                if (idP > 0) 
                 {
-                    Plataforma plataforma = plataformas.get(i);
-                    
-                    if (idP > 0 && idP == plataforma.getId())
-                        out.println("<li class='active'><a href='explorar.jsp?plataforma=" + (plataforma.getId() + (idG > 0 ? "&genero=" + idG : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + plataforma.getNome().toLowerCase()  + "<span> (" + plataforma.countGames() + ")</span></a></li>");
-                    else if (idP == 0)
-                        out.println("<li><a href='explorar.jsp?plataforma=" + (plataforma.getId() + (idG > 0 ? "&genero=" + idG : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + plataforma.getNome().toLowerCase() + "<span> (" + plataforma.countGames() + ")</span></a></li>");
+                    Plataforma plataforma = new PlataformaDAO().selectPlataformaByID(idP);
+                    out.println("<li class='active'><a href='explorar.jsp?plataforma=" + (plataforma.getId() + (idG > 0 ? "&genero=" + idG : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + plataforma.getNome().toLowerCase()  + "<small> (" + plataforma.countGames() + ")</small></a></li>");
+                }
+                else
+                {
+                    for (int i = 0; i < plataformas.size(); i++) 
+                    {
+                        Plataforma plataforma = plataformas.get(i);
+                        out.println("<li><a href='explorar.jsp?plataforma=" + (plataforma.getId() + (idG > 0 ? "&genero=" + idG : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + plataforma.getNome().toLowerCase() + "<small> (" + plataforma.countGames() + ")</small></a></li>");
+                    }
                 }
                 
                 out.println("</ul>");
@@ -70,16 +74,21 @@
                 ArrayList<Genero> generos = new GeneroDAO().selectGeneros();
 
                 out.println("<ul>");
-                for (int i = 0; i < generos.size(); i++) 
-                {                    
-                    Genero genero = generos.get(i);
-                    
-                    if (idG > 0 && idG == genero.getId())
-                        out.println("<li class='active'><a href='explorar.jsp?genero=" + (genero.getId() + (idP > 0 ? "&plataforma=" + idP : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + genero.getDescricao().toLowerCase() + "</a></li>");
-                    else if(idG == 0)
-                        out.println("<li><a href='explorar.jsp?genero=" + (genero.getId() + (idP > 0 ? "&plataforma=" + idP : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + genero.getDescricao().toLowerCase() + "</a></li>");
-
+                
+                if (idG > 0) 
+                {
+                    Genero genero = new GeneroDAO().selectGeneroByID(idG);
+                    out.println("<li class='active'><a href='explorar.jsp?genero=" + (genero.getId() + (idP > 0 ? "&plataforma=" + idP : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + genero.getDescricao().toLowerCase() + "<small> (" + genero.countGames() + ")</small></a></li>");
                 }
+                else
+                {
+                    for (int i = 0; i < generos.size(); i++) 
+                    {                    
+                        Genero genero = generos.get(i);
+                        out.println("<li><a href='explorar.jsp?genero=" + (genero.getId() + (idP > 0 ? "&plataforma=" + idP : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + genero.getDescricao().toLowerCase() + "<small> (" + genero.countGames() + ")</small></a></li>");
+                    }
+                }
+                
                 out.println("</ul>");
             %>
         </div>
@@ -92,14 +101,18 @@
 
                 out.println("<ul>");
                 
-                for (int i = 0; i < desenvolvedores.size(); i++) 
+                if (idD > 0) 
                 {
-                    Desenvolvedor desenvolvedor = desenvolvedores.get(i);
-                    
-                    if (idD > 0 && desenvolvedor.getId() == idD) 
-                        out.println("<li class='active'><a href='explorar.jsp?desenvolvedor=" + (desenvolvedor.getId() + (idG > 0 ? "&genero=" + idG : "") + (idP > 0 ? "&plataforma=" + idP : "")) +  "'>" + desenvolvedor.getNome().toLowerCase() + "</a></li>");
-                    else if(idD == 0)
-                        out.println("<li><a href='explorar.jsp?desenvolvedor=" + (desenvolvedor.getId() + (idG > 0 ? "&genero=" + idG : "") + (idP > 0 ? "&plataforma=" + idP : "")) +  "'>" + desenvolvedor.getNome().toLowerCase() + "</a></li>");
+                    Desenvolvedor desenvolvedor = new DesenvolvedorDAO().selectDesenvolvedorByID(idD);
+                    out.println("<li class='active'><a href='explorar.jsp?desenvolvedor=" + (desenvolvedor.getId() + (idG > 0 ? "&genero=" + idG : "") + (idP > 0 ? "&plataforma=" + idP : "")) +  "'>" + desenvolvedor.getNome().toLowerCase() + "<small> (" + desenvolvedor.countGames() + ")</small></a></li>");
+                }
+                else
+                {
+                    for (int i = 0; i < desenvolvedores.size(); i++) 
+                    {
+                        Desenvolvedor desenvolvedor = desenvolvedores.get(i);
+                        out.println("<li><a href='explorar.jsp?desenvolvedor=" + (desenvolvedor.getId() + (idG > 0 ? "&genero=" + idG : "") + (idP > 0 ? "&plataforma=" + idP : "")) +  "'>" + desenvolvedor.getNome().toLowerCase() + "<small> (" + desenvolvedor.countGames() + ")</small></a></li>");
+                    }
                 }
                 
                 out.println("</ul>");

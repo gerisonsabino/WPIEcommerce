@@ -1,3 +1,4 @@
+<%@page import="classes.Util"%>
 <%@page import="classes.Game"%>
 <%@page import="dao.GameDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -52,7 +53,7 @@
                         <div class="col-12 col-lg-5">
                             <div class="single_product_desc">
                                 <!-- Product Meta Data -->
-                                <div class="product-meta-data">
+                                <div class="product-meta-data mb-30">
                                     <div class="line"></div>
                                     <p class="product-price"><% out.println(game.getPrecoFormatado()); %></p>
                                     <a href="produto.jsp?id=<% out.println(game.getId()); %>">
@@ -61,13 +62,9 @@
                                     <!-- Avaiable -->
                                     <p class="avaibility"><i class="fa fa-circle"></i> Em estoque</p>
                                 </div>
-
-                                <div class="short_overview my-5">
-                                    <p><% out.println(game.getDescricao()); %></p>
-                                </div>
-
-                                <!-- Add to Cart Form -->
+                                    
                                 <form class="cart clearfix" method="post">
+                                    <!-- 
                                     <div class="cart-btn d-flex mb-50">
                                         <p>Quantidade</p>
                                         <div class="quantity">
@@ -75,10 +72,18 @@
                                             <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="1">
                                             <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-caret-up" aria-hidden="true"></i></span>
                                         </div>
-                                    </div>
+                                    </div> 
+                                    -->
                                     <button type="submit" name="addtocart" value="5" class="btn amado-btn">Adicionar ao Carrinho</button>
                                 </form>
-
+                                    
+                                <div class="short_overview my-5 descricao">
+                                    <p><% out.println(game.getDescricao()); %></p>
+                                    <strong><small>Lançamento: </small><% out.println(Util.toShortDateString(game.getLancamento())); %></strong>
+                                    <strong><small>Desenvolvedor: </small><% out.println(game.getDesenvolvedor().getNome()); %></strong>
+                                    <strong><small>Gênero: </small><% out.println(game.getGenero().getDescricao()); %></strong>
+                                    <strong><small>Plataforma: </small><% out.println(game.getPlataforma().getNome()); %></strong>
+                                </div>
                             </div>
                         </div>
                     </div>

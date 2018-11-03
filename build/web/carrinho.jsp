@@ -45,7 +45,7 @@
                                             <th>#</th>
                                             <th>Produto</th>
                                             <th>Preço</th>
-                                            <th>Quantidade</th>
+                                            <th>Opções</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -69,6 +69,9 @@
                                                 out.println("        <span>" + game.getPrecoFormatado() + "</span>");
                                                 out.println("    </td>");
                                                 out.println("    <td class='qty'>");
+                                                out.println("        <button class='btn'>Remover</button>");
+                                                out.println("    </td>");
+                                                /*out.println("    <td class='qty'>");
                                                 out.println("        <div class='qty-btn d-flex'>");
                                                 out.println("            <p>Qtde.</p>");
                                                 out.println("            <div class='quantity'>");
@@ -77,7 +80,7 @@
                                                 out.println("                <span class='qty-plus' onclick=\"var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;\"><i class='fa fa-plus' aria-hidden='true'></i></span>");
                                                 out.println("            </div>");
                                                 out.println("        </div>");
-                                                out.println("    </td>");
+                                                out.println("    </td>");*/
                                                 out.println("</tr>");
                                                 
                                                 total += game.getPreco();

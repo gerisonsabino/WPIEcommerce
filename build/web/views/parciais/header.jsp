@@ -20,16 +20,6 @@
             <img src="assets/img/tg.png" alt="This.Games" />
         </a>
     </div>
-    <!-- <nav class="amado-nav">
-        <ul>
-            <li class="active">
-                <a href="index.jsp">Início</a>
-            </li>
-            <li>
-                <a href="explorar.jsp">Explorar</a>
-            </li>
-        </ul>
-    </nav> -->
     <div class="cart-fav-search mb-50">
         <a href="index.jsp" class="cart-nav">
             <img src="assets/img/core-img/inicio.png" alt="Início"/>Início
@@ -44,8 +34,7 @@
             <img src="assets/img/core-img/cart.png" alt="Carrinho" />Carrinho <span>(0)</span>
         </a>
     </div>
-    <!-- <div class="amado-btn-group mt-30 mb-100">
-        <a href="#" class="btn amado-btn mb-15">Promoções</a>
-        <a href="#" class="btn amado-btn active">Lançamentos</a>
-    </div> -->
+    <div class="amado-btn-group mt-30 mb-100">
+        <a href="recomendacoes.jsp" class="btn amado-btn mb-15">Recomendações</a>
+    </div>
 </header>

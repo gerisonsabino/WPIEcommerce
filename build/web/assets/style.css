@@ -12,6 +12,10 @@
     ##### - PLACE YOUR CUSTOM CSS HERE - #####
     --------------------------------------- */
     
+    .logo {
+        margin-bottom: 70px;
+    }
+    
     .single-products-catagory:hover .hover-content div.line {
         background-color: #fbb710 !important;
     }
@@ -48,4 +52,36 @@
     
     .main-content-wrapper .cart-table-area .cart-summary {
         margin-top: 0px !important;
+    }
+    
+    .main-content-wrapper .shop_sidebar_area {
+        padding: 65px 30px !important;
+    }
+    
+    .section-padding-100 {
+        padding-top: 65px !important;
+    }
+    
+    .descricao strong {
+        display: block !important;
+        font-weight: 500;
+    }
+    
+    .descricao strong small {
+        width: 100px;
+        display: block !important;
+    }
+    
+    .amado-btn-sm {
+        display: inline-block;
+        min-width: 100px;
+        height: 35px;
+        color: #ffffff;
+        border: none;
+        border-radius: 0;
+        padding: 0 7px;
+        font-size: 15px;
+        line-height: 36px;
+        background-color: #fbb710;
+        font-weight: 400;
     }
