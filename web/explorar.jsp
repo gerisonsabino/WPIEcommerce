@@ -44,7 +44,7 @@
                                 out.println("<div class='col-12 col-sm-6 col-md-12 col-xl-6'>");
                                 out.println("    <div class='single-product-wrapper'>");
                                 out.println("        <div class='product-img'>");
-                                out.println("            <a href='produto.jsp?id=" + game.getId() + "'>");
+                                out.println("            <a href='produto?id=" + game.getId() + "'>");
                                 out.println("                <img src='" + game.getImagemUrl() + "' alt='" + game.getTitulo() + "' />");
                                 out.println("            </a>");
                                 out.println("        </div>");
@@ -52,7 +52,7 @@
                                 out.println("            <div class='product-meta-data'>");
                                 out.println("                <div class='line'></div>");
                                 out.println("                <p class='product-price'>" + game.getPrecoFormatado() + "</p>");
-                                out.println("                <a href='produto.jsp?id=" + game.getId() + "'>");
+                                out.println("                <a href='produto?id=" + game.getId() + "'>");
                                 out.println("                    <h6>" + game.getTitulo() + " - " + game.getPlataforma().getNome() + "</h6>");
                                 out.println("                </a>");
                                 out.println("            </div>");

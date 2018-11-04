@@ -41,8 +41,7 @@
                         Game game = games.get(i);
                         
                         out.println("<div class='single-products-catagory clearfix' style=\"background: url('"+ game.getImagemUrl() +"') center center / cover no-repeat #CCC;\">");
-                        out.println("    <a href='produto.jsp?id=" + game.getId() + "'>");
-                        //out.println("        <img src='" + game.getImagemUrl() + "' alt=''>");
+                        out.println("    <a href='produto?id=" + game.getId() + "'>");
                         out.println("        <div class='hover-content'>");
                         out.println("            <div class='line'></div>");
                         out.println("            <p>" + game.getPrecoFormatado() + "</p>");

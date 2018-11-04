@@ -65,7 +65,7 @@
 
                                                         out.println("<tr data-produto='" + game.getId() + "' data-preco='" + game.getPreco() + "' data-quantidade='1'>");
                                                         out.println("    <td class='cart_product_img'>");
-                                                        out.println("        <a href='produto.jsp?id=" + game.getId() + "' target='_blank'><img src='" + game.getImagemUrl() + "' alt='" + game.getTitulo() + "'></a>");
+                                                        out.println("        <a href='produto?id=" + game.getId() + "' target='_blank'><img src='" + game.getImagemUrl() + "' alt='" + game.getTitulo() + "'></a>");
                                                         out.println("    </td>");
                                                         out.println("    <td class='cart_product_desc'>");
                                                         out.println("        <h5>" + game.getTitulo() + " - " + game.getPlataforma().getNome() + "</h5>");

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package servlets;
 
 import classes.Carrinho;
@@ -26,17 +21,16 @@ public class AddCarrinhoServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         Carrinho carrinho = (Carrinho)session.getAttribute("carrinho");
         
-        if(carrinho == null){
+        if(carrinho == null)
             carrinho = new Carrinho();
-        }
         
         int id = Integer.parseInt(request.getParameter("idGame"));
         
         Game game = new GameDAO().selectGameByID(id);
+        
         ItemCarrinho item = new ItemCarrinho();
                
         item.setProduto(game);
-        /*itemCart.setQuantidade(1);*/
         carrinho.getItens().add(item);
 
         session.removeAttribute("carrinho");

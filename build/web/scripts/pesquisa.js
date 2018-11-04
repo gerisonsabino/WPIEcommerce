@@ -36,7 +36,7 @@ function capturaeventos() {
              document.getElementById("resultados").innerHTML = xmlDoc;
              
              $(".table-resultados tbody tr").click(function(){ 
-                 location.href = "produto.jsp?id=" + $(this).attr("data-produto");
+                 location.href = "produto?id=" + $(this).attr("data-produto");
              });
              
              $(".search-close").click(function(){
