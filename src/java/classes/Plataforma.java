@@ -1,5 +1,6 @@
 package classes;
 
+import dao.GameDAO;
 import java.util.ArrayList;
 
 public class Plataforma 
@@ -25,6 +26,6 @@ public class Plataforma
     
     public int countGames()
     {
-        return 0;
+        return new GameDAO().selectCountByIDPlataforma(this.getId());
     }
 }

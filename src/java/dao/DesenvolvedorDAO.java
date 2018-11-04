@@ -56,7 +56,7 @@ public class DesenvolvedorDAO
             Connection con = Conexao.getConnection();
             
             Statement stmt = con.createStatement();
-            String sql = "SELECT * FROM game_desenvolvedor";
+            String sql = "SELECT * FROM game_desenvolvedor ORDER BY Nome";
             
             ResultSet rs = stmt.executeQuery(sql);
             

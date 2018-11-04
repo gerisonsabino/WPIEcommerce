@@ -56,7 +56,7 @@ public class GeneroDAO
             Connection con = Conexao.getConnection();
             
             Statement stmt = con.createStatement();
-            String sql = "SELECT * FROM game_genero";
+            String sql = "SELECT * FROM game_genero ORDER BY Descricao";
             
             ResultSet rs = stmt.executeQuery(sql);
             

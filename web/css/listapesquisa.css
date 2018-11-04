@@ -1,0 +1,20 @@
+.search-wrapper{
+    height:auto !important;
+}
+.table-resultados {
+    width: 100% !important;
+}
+
+.table-resultados tbody tr td:first-child {
+    width: 50px !important;
+}
+
+.table-resultados tbody tr td{
+  padding: 5px;  
+  border-bottom: 1px solid #999; 
+}
+
+.table-resultados tbody tr:hover td{
+    cursor: pointer;
+    background-color: #fbb710;   
+}

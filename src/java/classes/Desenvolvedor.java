@@ -1,5 +1,7 @@
 package classes;
 
+import dao.GameDAO;
+
 public class Desenvolvedor 
 {
     private int id;
@@ -23,6 +25,7 @@ public class Desenvolvedor
     
     public int countGames()
     {
-        return 0;
+        return new GameDAO().selectCountByIDDesenvolvedor(this.getId());
     }
+    
 }

@@ -54,7 +54,7 @@ public class PlataformaDAO
         {
             Connection con = Conexao.getConnection();
             
-            String sql = "SELECT * FROM game_plataforma";
+            String sql = "SELECT * FROM game_plataforma ORDER BY Nome";
             
             PreparedStatement ps = con.prepareStatement(sql);
             

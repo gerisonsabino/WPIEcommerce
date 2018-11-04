@@ -217,4 +217,172 @@ public class GameDAO
         
         return games;
     }
+    
+    public int selectCountByIDDesenvolvedor(int id)
+    {
+        int c = 0;
+        
+        try 
+        {
+            Connection con = Conexao.getConnection();
+            
+            String sql = "SELECT COUNT(*) AS C FROM game WHERE IDDesenvolvedor=?;";
+            
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs.next()) 
+                c = rs.getInt("C");
+
+            rs.close();
+            ps.close();
+            con.close();            
+        } 
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+        
+        return c;
+    }
+    
+    public int selectCountByIDGenero(int id)
+    {
+        int c = 0;
+        
+        try 
+        {
+            Connection con = Conexao.getConnection();
+            
+            String sql = "SELECT COUNT(*) AS C FROM game WHERE IDGenero=?;";
+            
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs.next()) 
+                c = rs.getInt("C");
+
+            rs.close();
+            ps.close();
+            con.close();            
+        } 
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+        
+        return c;
+    }
+    
+    public int selectCountByIDPlataforma(int id)
+    {
+        int c = 0;
+        
+        try 
+        {
+            Connection con = Conexao.getConnection();
+            
+            String sql = "SELECT COUNT(*) AS C FROM game WHERE IDPlataforma=?;";
+            
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs.next()) 
+                c = rs.getInt("C");
+
+            rs.close();
+            ps.close();
+            con.close();            
+        } 
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+        
+        return c;
+    }
+    
+    public ArrayList<Game> pesquisarGames(String termo)
+    {
+        ArrayList<Game> games = new ArrayList<Game>();
+        ArrayList<Desenvolvedor> desenvolvedores = new DesenvolvedorDAO().selectDesenvolvedores();
+        ArrayList<Genero> generos = new GeneroDAO().selectGeneros();
+        ArrayList<Plataforma> plataformas = new PlataformaDAO().selectPlataformas();
+        
+        try 
+        {
+            Connection con = Conexao.getConnection();
+            
+            String sql = "SELECT * FROM game WHERE Titulo LIKE '" + termo + "%'";
+            PreparedStatement ps = con.prepareStatement(sql);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()) 
+            {
+                Game game = new Game();
+                
+                game.setDescricao(rs.getString("Descricao"));
+                game.setId(rs.getInt("ID"));
+                game.setIdDesenvolvedor(rs.getInt("IDDesenvolvedor"));
+                game.setIdGenero(rs.getInt("IDGenero"));
+                game.setIdPlataforma(rs.getInt("IDPlataforma"));
+                game.setImagemUrl(rs.getString("ImagemURL"));
+                game.setLancamento(rs.getDate("Lancamento"));
+                game.setPreco(rs.getDouble("Preco"));
+                game.setTitulo(rs.getString("Titulo"));
+
+                int i = 0;
+               
+                do
+                {
+                    if (desenvolvedores.get(i).getId() == game.getIdDesenvolvedor())
+                        game.setDesenvolvedor(desenvolvedores.get(i));
+                    
+                    i++;
+                }
+                while(game.getDesenvolvedor() == null);
+                
+                i = 0;
+
+                do
+                {
+                    if (generos.get(i).getId() == game.getIdGenero())
+                        game.setGenero(generos.get(i));
+                    
+                    i++;
+                }
+                while(game.getGenero() == null);
+                
+                i = 0;
+                                
+                do
+                {
+                    if (plataformas.get(i).getId() == game.getIdPlataforma())
+                        game.setPlataforma(plataformas.get(i));
+                    
+                    i++;
+                }
+                while(game.getPlataforma() == null);
+                
+                games.add(game);
+            }
+            
+            rs.close();
+            ps.close();
+            con.close();
+        } 
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+        
+        return games;
+    }    
 }
