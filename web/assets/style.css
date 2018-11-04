@@ -1,87 +1,101 @@
-    /* ####################################################
-    :: Template Name: Essence - Fashion Ecommerce Template
-    :: Author: Colorlib
-    :: Author URL: https://colorlib.com
-    :: Description: Essence is smart & elegant fashion e-commerce Template. It's suitable for all e-commerce business platform.
-    :: Version: 1.0.0
-    :: Created: April 27, 2018
-    :: Last Updated: May 2, 2018
-    #################################################### */
+.logo {
+    margin-bottom: 70px;
+}
 
-    /* ---------------------------------------
-    ##### - PLACE YOUR CUSTOM CSS HERE - #####
-    --------------------------------------- */
-    
-    .logo {
-        margin-bottom: 70px;
-    }
-    
-    .single-products-catagory:hover .hover-content div.line {
-        background-color: #fbb710 !important;
-    }
-    
-    .single-products-catagory .hover-content div.line,
-    .single-products-catagory .hover-content p,
-    .single-products-catagory .hover-content h4,
-    .single-products-catagory .hover-content label {
-        color: transparent;
-        background-color: transparent;
-        text-overflow: ellipsis;
-    }
-    
-    .single-products-catagory,
-    .single-products-catagory img {
-        width: 33%;
-        height: 380px;
-    }
-    
-    .single-products-catagory:hover .hover-content label {
-        color: #fbb710;
-        display: block;
-        text-transform: uppercase;
-    }
-    
-    .widget .catagories-menu li a {
-        text-transform: capitalize !important;
-        padding: 3px 0px !important;
-    } 
-    
-    .single-product-wrapper .product-img img {
-        max-height: 425px !important;
-    }
-    
-    .main-content-wrapper .cart-table-area .cart-summary {
-        margin-top: 0px !important;
-    }
-    
-    .main-content-wrapper .shop_sidebar_area {
-        padding: 65px 30px !important;
-    }
-    
-    .section-padding-100 {
-        padding-top: 65px !important;
-    }
-    
-    .descricao strong {
-        display: block !important;
-        font-weight: 500;
-    }
-    
-    .descricao strong small {
-        width: 100px;
-        display: block !important;
-    }
-    
-    .amado-btn-sm {
-        display: inline-block;
-        min-width: 100px;
-        height: 35px;
-        color: #ffffff;
-        border: none;
-        border-radius: 0;
-        padding: 0 7px;
-        font-size: 15px;
-        line-height: 36px;
-        background-color: #fbb710;
-        font-weight: 400;
-    }
+.single-products-catagory:hover .hover-content div.line {
+    background-color: #fbb710 !important;
+}
+
+.single-products-catagory .hover-content div.line,
+.single-products-catagory .hover-content p,
+.single-products-catagory .hover-content h4,
+.single-products-catagory .hover-content label {
+    color: transparent;
+    background-color: transparent;
+    text-overflow: ellipsis;
+}
+
+.single-products-catagory,
+.single-products-catagory img {
+    width: 33%;
+    height: 380px;
+}
+
+.single-products-catagory:hover .hover-content label {
+    color: #fbb710;
+    display: block;
+    text-transform: uppercase;
+}
+
+.widget .catagories-menu li a {
+    text-transform: capitalize !important;
+    padding: 3px 0px !important;
+} 
+
+.single-product-wrapper .product-img img {
+    max-height: 425px !important;
+}
+
+.main-content-wrapper .cart-table-area .cart-summary {
+    margin-top: 0px !important;
+}
+
+.main-content-wrapper .shop_sidebar_area {
+    padding: 65px 30px !important;
+}
+
+.section-padding-100 {
+    padding-top: 65px !important;
+}
+
+.descricao strong {
+    display: block !important;
+    font-weight: 500;
+}
+
+.descricao strong small {
+    width: 100px;
+    display: block !important;
+}
+
+.amado-btn-sm {
+    display: inline-block;
+    width: 50px;
+    height: 35px;
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+    padding: 0 7px;
+    font-size: 15px;
+    line-height: 36px;
+    background-color: #fbb710;
+    font-weight: 400;
+}
+
+.search-wrapper{
+    height:auto !important;
+}
+
+#resultados {
+    max-height: 450px;
+    overflow: auto;
+}
+
+.table-resultados {
+    width: 100% !important;
+}
+
+.table-resultados tbody tr td:first-child {
+    width: 50px !important;
+}
+
+.table-resultados tbody tr td{
+  padding: 5px;  
+  border-bottom: 1px solid #dee2e6; 
+}
+
+.table-resultados tbody tr:hover td{
+    cursor: pointer;
+    background-color: #fbb710;
+    color: #FFF;
+}

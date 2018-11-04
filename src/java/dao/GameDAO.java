@@ -136,8 +136,98 @@ public class GameDAO
         
         return games;
     }
+
+    public int selectCountByIDDesenvolvedor(int id)
+    {
+        int c = 0;
+        
+        try 
+        {
+            Connection con = Conexao.getConnection();
+            
+            String sql = "SELECT COUNT(*) AS C FROM game WHERE IDDesenvolvedor=?;";
+            
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs.next()) 
+                c = rs.getInt("C");
+
+            rs.close();
+            ps.close();
+            con.close();            
+        } 
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+        
+        return c;
+    }
     
-    public ArrayList<Game> selectGamesByIDPlataforma(int id)
+    public int selectCountByIDGenero(int id)
+    {
+        int c = 0;
+        
+        try 
+        {
+            Connection con = Conexao.getConnection();
+            
+            String sql = "SELECT COUNT(*) AS C FROM game WHERE IDGenero=?;";
+            
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs.next()) 
+                c = rs.getInt("C");
+
+            rs.close();
+            ps.close();
+            con.close();            
+        } 
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+        
+        return c;
+    }
+    
+    public int selectCountByIDPlataforma(int id)
+    {
+        int c = 0;
+        
+        try 
+        {
+            Connection con = Conexao.getConnection();
+            
+            String sql = "SELECT COUNT(*) AS C FROM game WHERE IDPlataforma=?;";
+            
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs.next()) 
+                c = rs.getInt("C");
+
+            rs.close();
+            ps.close();
+            con.close();            
+        } 
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+        
+        return c;
+    }
+    
+    public ArrayList<Game> pesquisarGames(String termo)
     {
         ArrayList<Game> games = new ArrayList<Game>();
         ArrayList<Desenvolvedor> desenvolvedores = new DesenvolvedorDAO().selectDesenvolvedores();
@@ -148,13 +238,10 @@ public class GameDAO
         {
             Connection con = Conexao.getConnection();
             
-            String sql = "SELECT * FROM game WHERE IDPlataforma=? ORDER BY Titulo;";
-            
+            String sql = "SELECT game.*, game_plataforma.Nome FROM game INNER JOIN game_plataforma ON game_plataforma.Nome LIKE '" + termo + "%' OR game.Titulo LIKE '" + termo + "%' WHERE game.IDPlataforma = game_plataforma.ID;";
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, id);
             
-            
-            ResultSet rs = ps.executeQuery(sql);
+            ResultSet rs = ps.executeQuery();
             
             while (rs.next()) 
             {
@@ -191,7 +278,7 @@ public class GameDAO
                     i++;
                 }
                 while(game.getGenero() == null);
-                                
+                
                 i = 0;
                                 
                 do

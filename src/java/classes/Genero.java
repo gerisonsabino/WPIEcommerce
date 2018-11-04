@@ -1,5 +1,7 @@
 package classes;
 
+import dao.GameDAO;
+
 public class Genero 
 {
     private int id;
@@ -23,6 +25,6 @@ public class Genero
     
     public int countGames()
     {
-        return 0;
+        return new GameDAO().selectCountByIDGenero(this.getId());
     }
 }
