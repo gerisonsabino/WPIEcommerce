@@ -12,10 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "AddCarrinhoServlet", urlPatterns = {"/AddCarrinhoServlet"})
+@WebServlet(name = "AddCarrinhoServlet", urlPatterns = {"/addcart"})
 public class AddCarrinhoServlet extends HttpServlet {
-
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(true);
@@ -37,5 +35,4 @@ public class AddCarrinhoServlet extends HttpServlet {
         session.setAttribute("carrinho", carrinho);
         response.sendRedirect("carrinho.jsp");
     }
-    // </editor-fold>
 }

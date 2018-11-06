@@ -29,10 +29,13 @@
                                         <a class="nav-link" href="index.jsp">Início</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="explorar.jsp">Explorar</a>
+                                        <a class="nav-link" href="explorar">Explorar</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="carrinho.jsp">Carrinho</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="recomendacoes.jsp">Recomendações</a>
                                     </li>
                                 </ul>
                             </div>

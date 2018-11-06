@@ -1,8 +1,11 @@
+<%@page import="java.util.Collections"%>
 <%@page import="dao.GameDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="classes.Game"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
+
 <html lang="pt-br">
 
 <head>
@@ -36,11 +39,12 @@
             <div class="amado-pro-catagory clearfix">
                 <%
                     ArrayList<Game> games = new GameDAO().selectGames();
+                    Collections.shuffle(games);
                     
                     for (int i = 0; i < games.size(); i++) {
                         Game game = games.get(i);
                         
-                        out.println("<div class='single-products-catagory clearfix' style=\"background: url('"+ game.getImagemUrl() +"') center center / cover no-repeat #CCC;\">");
+                        out.println("<div class='single-products-catagory clearfix' style=\"background: url('"+ game.getImagemUrl() +"') center center / cover no-repeat #f5f7fa;\">");
                         out.println("    <a href='produto?id=" + game.getId() + "'>");
                         out.println("        <div class='hover-content'>");
                         out.println("            <div class='line'></div>");

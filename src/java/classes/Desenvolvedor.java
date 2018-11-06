@@ -23,8 +23,8 @@ public class Desenvolvedor
         this.nome = nome;
     }
     
-    public int countGames()
+    public int countGames(int idGenero, int idPlataforma)
     {
-        return new GameDAO().selectCountByIDDesenvolvedor(this.getId());
+        return new GameDAO().selectCountByIDDesenvolvedor(this.getId(), idGenero, idPlataforma);
     }
 }

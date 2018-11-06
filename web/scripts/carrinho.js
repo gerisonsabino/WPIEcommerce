@@ -1,7 +1,7 @@
 $(function () {
     $("[data-remove-carrinho]").click(function () {
         var id = $(this).attr("data-remove-carrinho");
-        $("#idGame").val(id);
+        $("#posicao").val(id);
         $("#removeItem").submit();
     });
 });

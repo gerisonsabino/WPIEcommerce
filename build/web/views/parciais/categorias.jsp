@@ -27,16 +27,14 @@
         idD = Integer.parseInt(d);
 %>
 
+
+
 <div class="shop_sidebar_area">
     <% 
         if ((idD + idG + idP) > 0) {
             out.println("<div class='widget catagory mb-30'>");
-            out.println("   <div class='catagories-menu'>");
-            out.println("       <ul>");
-            out.println("           <li>");
-            out.println("               <a href='explorar.jsp'>Limpar Filtros</a>");
-            out.println("           </li>");
-            out.println("       </ul>");
+            out.println("   <div class='amado-btn-group'>");
+            out.println("       <a class='btn amado-btn-sm' href='explorar'>Limpar Filtros</a>");
             out.println("   </div>");
             out.println("</div>");
         }
@@ -52,14 +50,14 @@
                 if (idP > 0) 
                 {
                     Plataforma plataforma = new PlataformaDAO().selectPlataformaByID(idP);
-                    out.println("<li class='active'><a href='explorar.jsp?plataforma=" + (plataforma.getId() + (idG > 0 ? "&genero=" + idG : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + plataforma.getNome().toLowerCase()  + "<small> (" + plataforma.countGames() + ")</small></a></li>");
+                    out.println("<li class='active'><a href='explorar?plataforma=" + (plataforma.getId() + (idG > 0 ? "&genero=" + idG : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + plataforma.getNome().toLowerCase()  + "<small> (" + plataforma.countGames(idG, idD) + ")</small></a></li>");
                 }
                 else
                 {
                     for (int i = 0; i < plataformas.size(); i++) 
                     {
                         Plataforma plataforma = plataformas.get(i);
-                        out.println("<li><a href='explorar.jsp?plataforma=" + (plataforma.getId() + (idG > 0 ? "&genero=" + idG : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + plataforma.getNome().toLowerCase() + "<small> (" + plataforma.countGames() + ")</small></a></li>");
+                        out.println("<li><a href='explorar?plataforma=" + (plataforma.getId() + (idG > 0 ? "&genero=" + idG : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + plataforma.getNome().toLowerCase() + "<small> (" + plataforma.countGames(idG, idD) + ")</small></a></li>");
                     }
                 }
                 
@@ -78,14 +76,14 @@
                 if (idG > 0) 
                 {
                     Genero genero = new GeneroDAO().selectGeneroByID(idG);
-                    out.println("<li class='active'><a href='explorar.jsp?genero=" + (genero.getId() + (idP > 0 ? "&plataforma=" + idP : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + genero.getDescricao().toLowerCase() + "<small> (" + genero.countGames() + ")</small></a></li>");
+                    out.println("<li class='active'><a href='explorar?genero=" + (genero.getId() + (idP > 0 ? "&plataforma=" + idP : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + genero.getDescricao().toLowerCase() + "<small> (" + genero.countGames(idP, idD) + ")</small></a></li>");
                 }
                 else
                 {
                     for (int i = 0; i < generos.size(); i++) 
                     {                    
                         Genero genero = generos.get(i);
-                        out.println("<li><a href='explorar.jsp?genero=" + (genero.getId() + (idP > 0 ? "&plataforma=" + idP : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + genero.getDescricao().toLowerCase() + "<small> (" + genero.countGames() + ")</small></a></li>");
+                        out.println("<li><a href='explorar?genero=" + (genero.getId() + (idP > 0 ? "&plataforma=" + idP : "") + (idD > 0 ? "&desenvolvedor=" + idD : "")) + "'>" + genero.getDescricao().toLowerCase() + "<small> (" + genero.countGames(idP, idD) + ")</small></a></li>");
                     }
                 }
                 
@@ -104,14 +102,14 @@
                 if (idD > 0) 
                 {
                     Desenvolvedor desenvolvedor = new DesenvolvedorDAO().selectDesenvolvedorByID(idD);
-                    out.println("<li class='active'><a href='explorar.jsp?desenvolvedor=" + (desenvolvedor.getId() + (idG > 0 ? "&genero=" + idG : "") + (idP > 0 ? "&plataforma=" + idP : "")) +  "'>" + desenvolvedor.getNome().toLowerCase() + "<small> (" + desenvolvedor.countGames() + ")</small></a></li>");
+                    out.println("<li class='active'><a href='explorar?desenvolvedor=" + (desenvolvedor.getId() + (idG > 0 ? "&genero=" + idG : "") + (idP > 0 ? "&plataforma=" + idP : "")) +  "'>" + desenvolvedor.getNome().toLowerCase() + "<small> (" + desenvolvedor.countGames(idG, idP) + ")</small></a></li>");
                 }
                 else
                 {
                     for (int i = 0; i < desenvolvedores.size(); i++) 
                     {
                         Desenvolvedor desenvolvedor = desenvolvedores.get(i);
-                        out.println("<li><a href='explorar.jsp?desenvolvedor=" + (desenvolvedor.getId() + (idG > 0 ? "&genero=" + idG : "") + (idP > 0 ? "&plataforma=" + idP : "")) +  "'>" + desenvolvedor.getNome().toLowerCase() + "<small> (" + desenvolvedor.countGames() + ")</small></a></li>");
+                        out.println("<li><a href='explorar?desenvolvedor=" + (desenvolvedor.getId() + (idG > 0 ? "&genero=" + idG : "") + (idP > 0 ? "&plataforma=" + idP : "")) +  "'>" + desenvolvedor.getNome().toLowerCase() + "<small> (" + desenvolvedor.countGames(idG, idP) + ")</small></a></li>");
                     }
                 }
                 

@@ -23,8 +23,8 @@ public class Genero
         this.descricao = descricao;
     }  
     
-    public int countGames()
+    public int countGames(int idPlataforma, int idDesenvolvedor)
     {
-        return new GameDAO().selectCountByIDGenero(this.getId());
+        return new GameDAO().selectCountByIDGenero(this.getId(), idPlataforma, idDesenvolvedor);
     }
 }

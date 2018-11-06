@@ -10,6 +10,7 @@ public class Game
     private int id;
     private String titulo;
     private Double preco;
+    private String precoFormatado;
     private Date lancamento;
     private String descricao;
     private String imagemUrl;
@@ -44,6 +45,7 @@ public class Game
 
     public void setPreco(Double preco) {
         this.preco = preco;
+        this.setPrecoFormatado();
     }
 
     public Date getLancamento() {
@@ -119,6 +121,10 @@ public class Game
     }
     
     public String getPrecoFormatado() {
+        return this.precoFormatado;
+    }
+    
+    public void setPrecoFormatado() {
         Double currencyAmount = new Double(this.getPreco());
         
         Locale locale = new Locale("pt", "BR");
@@ -126,6 +132,6 @@ public class Game
         NumberFormat currencyFormatter = new java.text.DecimalFormat("###,###,##0.00");
         NumberFormat.getCurrencyInstance(locale);
 
-        return currentCurrency.getSymbol() + " " + currencyFormatter.format(currencyAmount);
+        this.precoFormatado = currentCurrency.getSymbol() + " " + currencyFormatter.format(currencyAmount);
     }
 }

@@ -24,8 +24,8 @@ public class Plataforma
         this.nome = nome;
     }
     
-    public int countGames()
+    public int countGames(int idGenero, int idDesenvolvedor)
     {
-        return new GameDAO().selectCountByIDPlataforma(this.getId());
+        return new GameDAO().selectCountByIDPlataforma(this.getId(), idGenero, idDesenvolvedor);
     }
 }

@@ -46,8 +46,8 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Produto</th>
-                                            <th>Preço</th>
-                                            <th>Opções</th>
+                                            <th class="text-right">Preço</th>
+                                            <th class="text-right">Opções</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -70,11 +70,11 @@
                                                         out.println("    <td class='cart_product_desc'>");
                                                         out.println("        <h5>" + game.getTitulo() + " - " + game.getPlataforma().getNome() + "</h5>");
                                                         out.println("    </td>");
-                                                        out.println("    <td class='price'>");
+                                                        out.println("    <td class='price text-right'>");
                                                         out.println("        <span>" + game.getPrecoFormatado() + "</span>");
                                                         out.println("    </td>");
-                                                        out.println("    <td class='qty text-center'>");
-                                                        out.println("        <button data-remove-carrinho='" + game.getId() + "' class='btn' data-toggle='tooltip' data-placement='right' title='Remover do Carrinho'><i class='fa fa-trash'></i></button>");
+                                                        out.println("    <td class='qty text-right'>");
+                                                        out.println("        <button data-remove-carrinho='" + i + "' class='btn btn-sm' data-toggle='tooltip' data-placement='right' title='Remover do Carrinho'><i class='fa fa-trash'></i></button>");
                                                         out.println("    </td>");
                                                         out.println("</tr>");
 
@@ -120,8 +120,8 @@
             </div>
         </div>
 
-        <form class="cart clearfix" id="removeItem" action="RemoveCarrinhoServlet" method="post">
-            <input type="hidden" id="idGame" name="idGame" value=""/>
+        <form id="removeItem" action="removecart" method="post">
+            <input type="hidden" id="posicao" name="posicao" value=""/>
         </form>
 
         <!-- ##### Main Content Wrapper End ##### -->

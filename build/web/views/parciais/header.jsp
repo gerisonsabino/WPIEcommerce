@@ -1,5 +1,6 @@
 <%@page import="classes.Carrinho"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <div class="mobile-nav">
     <div class="amado-navbar-brand">
         <a href="index.jsp">
@@ -25,7 +26,7 @@
         <a href="index.jsp" class="cart-nav">
             <img src="assets/img/core-img/inicio.png" alt="Início"/>Início
         </a>
-        <a href="explorar.jsp" class="cart-nav">
+        <a href="explorar" class="cart-nav">
             <img src="assets/img/core-img/explorar.png" alt="Explorar"/>Explorar
         </a>
         <a href="#" class="search-nav" onclick="$('#search').focus();">
@@ -34,10 +35,14 @@
         <a href="carrinho.jsp" class="cart-nav">
             <img src="assets/img/core-img/cart.png" alt="Carrinho" />Carrinho 
             <%
-                try {
+                try 
+                {
                     Carrinho carrinho = (Carrinho) session.getAttribute("carrinho");
+                    
                     out.println("<span>("+ carrinho.getItens().size() +")</span>");
-                }catch(Exception e){
+                }
+                catch(Exception e)
+                {
                     out.println("<span>(0)</span>");
                 }
             %>

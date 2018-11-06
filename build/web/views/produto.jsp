@@ -25,13 +25,13 @@
     </head>
     <body>
         <!-- Search Wrapper Area Start -->
-        <jsp:include page="views/parciais/pesquisa.jsp" />
+        <jsp:include page="parciais/pesquisa.jsp" />
         <!-- Search Wrapper Area End -->
 
         <!-- ##### Main Content Wrapper Start ##### -->
         <div class="main-content-wrapper d-flex clearfix">
             <!-- Header Area Start -->
-            <jsp:include page="views/parciais/header.jsp" />
+            <jsp:include page="parciais/header.jsp" />
             <!-- Header Area End -->
 
             <!-- Product Details Area Start -->
@@ -64,7 +64,7 @@
                                     <p class="avaibility"><i class="fa fa-circle"></i> Em estoque</p>
                                 </div>
 
-                                <form class="cart clearfix" action="AddCarrinhoServlet" method="post">
+                                <form class="cart clearfix" action="addcart" method="post">
                                     <!-- 
                                     <div class="cart-btn d-flex mb-50">
                                         <p>Quantidade</p>
@@ -97,8 +97,8 @@
         <!-- ##### Main Content Wrapper End ##### -->
 
         <!-- ##### Footer Area Start ##### -->
-        <jsp:include page="views/parciais/footer.jsp" />
+        <jsp:include page="parciais/footer.jsp" />
         <!-- ##### Footer Area End ##### -->
-        <jsp:include page="views/parciais/scripts.jsp" />
+        <jsp:include page="parciais/scripts.jsp" />
     </body>
 </html>

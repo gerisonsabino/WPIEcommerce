@@ -36,6 +36,30 @@
     max-height: 425px !important;
 }
 
+.cart {
+    cursor: pointer !important;
+}
+
+.amado-btn-sm {
+    display: inline-block;
+    height: 35px;
+    width: 100% !important;
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+    padding: 0 7px;
+    font-size: 15px !important;
+    line-height: 35px;
+    background-color: #fbb710;
+    font-weight: 400;
+}
+
+.amado-btn-sm.active, .amado-btn-sm:hover, .amado-btn-sm:focus {
+    font-size: 15px !important;
+    color: #ffffff;
+    background-color: #131212;
+}
+
 .main-content-wrapper .cart-table-area .cart-summary {
     margin-top: 0px !important;
 }

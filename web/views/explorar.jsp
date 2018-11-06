@@ -21,22 +21,23 @@
 
     <body>
         <!-- Search Wrapper Area Start -->
-        <jsp:include page="views/parciais/pesquisa.jsp" />
+        <jsp:include page="parciais/pesquisa.jsp" />
         <!-- Search Wrapper Area End -->
 
         <!-- ##### Main Content Wrapper Start ##### -->
         <div class="main-content-wrapper d-flex clearfix">
             <!-- Header Area Start -->
-            <jsp:include page="views/parciais/header.jsp" />
+            <jsp:include page="parciais/header.jsp" />
             <!-- Header Area End -->
 
-            <jsp:include page="views/parciais/categorias.jsp" />
+            <jsp:include page="parciais/categorias.jsp" />
 
             <div class="amado_product_area section-padding-100">
                 <div class="container-fluid">
-                    <div class="row">
+                    <div class="row" id="lista">
+                        <% out.println("<input type='hidden' id='JSON' value='" + request.getAttribute("JSON").toString() + "' />"); %>
                         <%
-                            ArrayList<Game> games = new GameDAO().selectGames();
+                           /* ArrayList<Game> games = new GameDAO().selectGames();
 
                             for (int i = 0; i < games.size(); i++) {
                                 Game game = games.get(i);
@@ -64,23 +65,23 @@
                                 out.println("        </div>");
                                 out.println("    </div>");
                                 out.println("</div>");
-                            }
+                            }*/
                         %>
                     </div>
                 </div>
             </div>
         </div>
+        <form id="addcarrinho" action="addcart" method="post">
+            <input type="hidden" id="idGame" name="idGame" value=""/>
+        </form>
         <!-- ##### Main Content Wrapper End ##### -->
 
         <!-- ##### Footer Area Start ##### -->
-        <jsp:include page="views/parciais/footer.jsp" />
+        <jsp:include page="parciais/footer.jsp" />
         <!-- ##### Footer Area End ##### -->
 
         <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
-        <jsp:include page="views/parciais/scripts.jsp" />
-        <form class="cart clearfix" id="addcarrinho" action="AddCarrinhoServlet" method="post">
-            <input type="hidden" id="idGame" name="idGame" value=""/>
-        </form>
+        <jsp:include page="parciais/scripts.jsp" />
         <script src="scripts/explorar.js" type="text/javascript"></script>
     </body>
 
