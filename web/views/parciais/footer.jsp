@@ -7,7 +7,7 @@
                 <div class="single_widget_area">
                     <!-- Logo -->
                     <div class="footer-logo mr-50">
-                        <a href="index.jsp">
+                        <a href="inicio">
                             <img src="assets/img/tg-footer.png" alt=""/>
                         </a>
                     </div>
@@ -26,16 +26,13 @@
                             <div class="collapse navbar-collapse" id="footerNavContent">
                                 <ul class="navbar-nav ml-auto">
                                     <li class="nav-item active">
-                                        <a class="nav-link" href="index.jsp">Início</a>
+                                        <a class="nav-link" href="inicio">Início</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="explorar">Explorar</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="carrinho.jsp">Carrinho</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="recomendacoes.jsp">Recomendações</a>
+                                        <a class="nav-link" href="carrinho">Carrinho</a>
                                     </li>
                                 </ul>
                             </div>
@@ -46,3 +43,4 @@
         </div>
     </div>
 </footer>
+<script src="assets/js/jquery/jquery-2.2.4.min.js" type="text/javascript"></script>

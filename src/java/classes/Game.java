@@ -61,7 +61,7 @@ public class Game
     }
 
     public void setDescricao(String descricao) {
-        this.descricao = descricao;
+        this.descricao = descricao.replace("\n", "<br />");
     }
 
     public String getImagemUrl() {

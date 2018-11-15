@@ -21,19 +21,19 @@
 
 <body>
     <!-- Search Wrapper Area Start -->
-    <jsp:include page="views/parciais/pesquisa.jsp" />
+    <jsp:include page="parciais/pesquisa.jsp" />
     <!-- Search Wrapper Area End -->
 
     <!-- ##### Main Content Wrapper Start ##### -->
     <div class="main-content-wrapper d-flex clearfix">
         <!-- Header Area Start -->
-        <jsp:include page="views/parciais/header.jsp" />
+        <jsp:include page="parciais/header.jsp" />
         <!-- Header Area End -->
         
         <div class="shop_sidebar_area">
             <div class="widget catagory mb-30">
                 <h6 class="widget-title mb-10">Você visualizou: </h6>
-                <div class="catagories-menu">
+                <div class="catagories-menu" id="div-jogos-visualizados">
                     <%                
                         out.println("<ul>");
                         
@@ -49,10 +49,9 @@
                 </div>
             </div>
         </div>
-        
         <div class="amado_product_area section-padding-100">
             <div class="container-fluid">
-                <div class="row">
+                <div class="row" id="div-jogos-recomendados">
                 <%
                     for (int i = 0; i < 5; i++) {
                         Game game = new GameDAO().selectGameByID(i + 1);
@@ -89,11 +88,13 @@
     <!-- ##### Main Content Wrapper End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
-    <jsp:include page="views/parciais/footer.jsp" />
+    <jsp:include page="parciais/footer.jsp" />
     <!-- ##### Footer Area End ##### -->
 
     <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
-    <jsp:include page="views/parciais/scripts.jsp" />
+    <jsp:include page="parciais/scripts.jsp" />
+    
+    <script src="../scripts/recomendacoes.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class Conexao 
 {
-    public static Connection getConnection() throws Exception 
+    public static Connection getDBConnection() throws Exception 
     {
         Connection con = null;
         
@@ -23,5 +23,10 @@ public class Conexao
         con = DriverManager.getConnection(url, username, password);
 
         return con;
+    }
+    
+    public static String getWSConnection()
+    {
+        return "http://localhost:8080/WSPIEcommerce/thisgame";
     }
 }

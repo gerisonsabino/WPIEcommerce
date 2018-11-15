@@ -1,6 +1,5 @@
 <%@page import="classes.ItemCarrinho"%>
 <%@page import="classes.Util"%>
-<%@page import="dao.GameDAO"%>
 <%@page import="classes.Game"%>
 <%@page import="classes.Carrinho"%>
 <%@page import="java.util.ArrayList"%>
@@ -22,14 +21,14 @@
     </head>
     <body>
         <!-- Search Wrapper Area Start -->
-        <jsp:include page="views/parciais/pesquisa.jsp" />
+        <jsp:include page="parciais/pesquisa.jsp" />
         <!-- Search Wrapper Area End -->
 
         <!-- ##### Main Content Wrapper Start ##### -->
         <div class="main-content-wrapper d-flex clearfix">
 
             <!-- Header Area Start -->
-            <jsp:include page="views/parciais/header.jsp" />
+            <jsp:include page="parciais/header.jsp" />
             <!-- Header Area End -->
 
             <div class="cart-table-area section-padding-100">
@@ -120,18 +119,19 @@
             </div>
         </div>
 
-        <form id="removeItem" action="removecart" method="post">
+        <form id="removeItem" action="carrinho" method="post">
+            <input type="hidden" id="remove" name="remove" value="remove"/>
             <input type="hidden" id="posicao" name="posicao" value=""/>
         </form>
 
         <!-- ##### Main Content Wrapper End ##### -->
 
         <!-- ##### Footer Area Start ##### -->
-        <jsp:include page="views/parciais/footer.jsp" />
+        <jsp:include page="parciais/footer.jsp" />
         <!-- ##### Footer Area End ##### -->
 
         <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
-        <jsp:include page="views/parciais/scripts.jsp" />
+        <jsp:include page="parciais/scripts.jsp" />
         <script src="scripts/carrinho.js" type="text/javascript"></script>
     </body>
 </html>

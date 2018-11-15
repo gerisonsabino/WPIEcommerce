@@ -1,8 +1,5 @@
-<%@page import="dao.DesenvolvedorDAO"%>
 <%@page import="classes.Desenvolvedor"%>
-<%@page import="dao.PlataformaDAO"%>
 <%@page import="classes.Plataforma"%>
-<%@page import="dao.GeneroDAO"%>
 <%@page import="classes.Genero"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -41,9 +38,9 @@
     %>
     <div class="widget catagory mb-30">
         <h6 class="widget-title mb-10">Plataforma</h6>
-        <div class="catagories-menu">
+        <div class="catagories-menu" id="cat-plataformas">
             <%                
-                ArrayList<Plataforma> plataformas = new PlataformaDAO().selectPlataformas();
+               /* ArrayList<Plataforma> plataformas = new PlataformaDAO().selectPlataformas();
 
                 out.println("<ul>");
                 
@@ -61,15 +58,15 @@
                     }
                 }
                 
-                out.println("</ul>");
+                out.println("</ul>");*/
             %>
         </div>
     </div>
     <div class="widget catagory mb-30">
         <h6 class="widget-title mb-10">Gênero</h6>
-        <div class="catagories-menu">
+        <div class="catagories-menu" id="cat-generos">
             <%
-                ArrayList<Genero> generos = new GeneroDAO().selectGeneros();
+               /* ArrayList<Genero> generos = new GeneroDAO().selectGeneros();
 
                 out.println("<ul>");
                 
@@ -87,15 +84,15 @@
                     }
                 }
                 
-                out.println("</ul>");
+                out.println("</ul>");*/
             %>
         </div>
     </div>
     <div class="widget catagory mb-30">
         <h6 class="widget-title mb-10">Desenvolvedor</h6>
-        <div class="catagories-menu">
+        <div class="catagories-menu" id="cat-desenvolvedores">
             <%
-                ArrayList<Desenvolvedor> desenvolvedores = new DesenvolvedorDAO().selectDesenvolvedores();
+                /*ArrayList<Desenvolvedor> desenvolvedores = new DesenvolvedorDAO().selectDesenvolvedores();
 
                 out.println("<ul>");
                 
@@ -113,7 +110,7 @@
                     }
                 }
                 
-                out.println("</ul>");
+                out.println("</ul>");*/
             %>
         </div>
     </div>

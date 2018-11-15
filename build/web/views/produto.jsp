@@ -64,19 +64,10 @@
                                     <p class="avaibility"><i class="fa fa-circle"></i> Em estoque</p>
                                 </div>
 
-                                <form class="cart clearfix" action="addcart" method="post">
-                                    <!-- 
-                                    <div class="cart-btn d-flex mb-50">
-                                        <p>Quantidade</p>
-                                        <div class="quantity">
-                                            <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
-                                            <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="1">
-                                            <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-caret-up" aria-hidden="true"></i></span>
-                                        </div>
-                                    </div> 
-                                    -->
+                                <form class="cart clearfix" action="carrinho" method="post">
                                     <input type="hidden" id="idGame" name="idGame" value="<% out.print(game.getId()); %>"/>
-                                    <button type="submit" name="addtocart" class="btn amado-btn">Adicionar ao Carrinho</button>
+                                    <input type="hidden" id="add" name="add" value="add"/>
+                                    <button type="submit" class="btn amado-btn">Adicionar ao Carrinho</button>
                                 </form>
 
                                 <div class="short_overview my-5 descricao">

@@ -7,7 +7,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import ws.WebService;
 
 @WebServlet(name = "ExplorarServlet", urlPatterns = {"/explorar"})
 public class ExplorarServlet extends HttpServlet {
@@ -30,9 +29,9 @@ public class ExplorarServlet extends HttpServlet {
         if (desenvolvedor != null && !desenvolvedor.equals(""))
             idD = Integer.parseInt(desenvolvedor);
         
-        String json = new WebService().getJson(idP, idG, idD);
-        
-        request.setAttribute("JSON", json);
+        request.setAttribute("plataforma", idP);
+        request.setAttribute("genero", idG);
+        request.setAttribute("desenvolvedor", idD);
         
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/explorar.jsp?" + (idP > 0 ? "plataforma=" + idP : "") + (idG > 0 ? "&genero=" + idG : "") + (idD > 0 ? "&desenvolvedor=" + idD : ""));
         dispatcher.forward(request, response);

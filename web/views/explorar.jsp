@@ -1,4 +1,3 @@
-<%@page import="dao.GameDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="classes.Game"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -35,43 +34,15 @@
             <div class="amado_product_area section-padding-100">
                 <div class="container-fluid">
                     <div class="row" id="lista">
-                        <% out.println("<input type='hidden' id='JSON' value='" + request.getAttribute("JSON").toString() + "' />"); %>
-                        <%
-                           /* ArrayList<Game> games = new GameDAO().selectGames();
-
-                            for (int i = 0; i < games.size(); i++) {
-                                Game game = games.get(i);
-
-                                out.println("<div class='col-12 col-sm-6 col-md-12 col-xl-6'>");
-                                out.println("    <div class='single-product-wrapper'>");
-                                out.println("        <div class='product-img'>");
-                                out.println("            <a href='produto?id=" + game.getId() + "'>");
-                                out.println("                <img src='" + game.getImagemUrl() + "' alt='" + game.getTitulo() + "' />");
-                                out.println("            </a>");
-                                out.println("        </div>");
-                                out.println("        <div class='product-description d-flex align-items-center justify-content-between'>");
-                                out.println("            <div class='product-meta-data'>");
-                                out.println("                <div class='line'></div>");
-                                out.println("                <p class='product-price'>" + game.getPrecoFormatado() + "</p>");
-                                out.println("                <a href='produto?id=" + game.getId() + "'>");
-                                out.println("                    <h6>" + game.getTitulo() + " - " + game.getPlataforma().getNome() + "</h6>");
-                                out.println("                </a>");
-                                out.println("            </div>");
-                                out.println("            <div class='ratings-cart text-right'>");
-                                out.println("                <div class='cart'>");
-                                out.println("                    <a href='#' data-add-carrinho='" + game.getId() + "' data-toggle='tooltip' data-placement='right' title='Adicionar ao Carrinho'><img src='assets/img/core-img/cart.png' alt=''></a>");
-                                out.println("                </div>");
-                                out.println("            </div>");
-                                out.println("        </div>");
-                                out.println("    </div>");
-                                out.println("</div>");
-                            }*/
-                        %>
+                        <% out.println("<input type='hidden' id='plataforma' value='" + request.getAttribute("plataforma").toString() + "' />"); %>
+                        <% out.println("<input type='hidden' id='genero' value='" + request.getAttribute("genero").toString() + "' />"); %>
+                        <% out.println("<input type='hidden' id='desenvolvedor' value='" + request.getAttribute("desenvolvedor").toString() + "' />"); %>
                     </div>
                 </div>
             </div>
         </div>
-        <form id="addcarrinho" action="addcart" method="post">
+        <form id="addcarrinho" action="carrinho" method="post">
+            <input type="hidden" id="add" name="add" value="add"/>
             <input type="hidden" id="idGame" name="idGame" value=""/>
         </form>
         <!-- ##### Main Content Wrapper End ##### -->
@@ -82,7 +53,8 @@
 
         <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
         <jsp:include page="parciais/scripts.jsp" />
+        
+        <script src="scripts/categorias.js" type="text/javascript"></script>
         <script src="scripts/explorar.js" type="text/javascript"></script>
     </body>
-
 </html>

@@ -9,7 +9,7 @@
             <div class="col-12">
                 <div class="search-content">
                     <form action="#" method="get">
-                        <input type="search" name="search" id="search" placeholder="Busque pelo nome do jogo ou plataforma..."  onkeyup="pesquisarGames()" autocomplete="off" />
+                        <input type="search" name="search" id="search" placeholder="Busque pelo nome do jogo ou plataforma..."  onkeyup="pesquisar()" autocomplete="off" />
                         
                         <button type="button">
                             <img src="img/core-img/search.png" alt="">

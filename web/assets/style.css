@@ -123,3 +123,26 @@
     background-color: #fbb710;
     color: #FFF;
 }
+
+.single-products-catagory {
+    float: left !important;
+    max-width: 285px !important;
+}
+
+@media all and (min-width:768px){
+    .single-products-catagory {
+        max-width: 33% !important;
+    }
+}
+
+@media all and (min-width:992px){
+    .single-products-catagory {
+        max-width: 25% !important;
+    }
+}
+
+@media all and (min-width:1200px){
+    .single-products-catagory {
+        max-width: 20% !important;
+    }
+}

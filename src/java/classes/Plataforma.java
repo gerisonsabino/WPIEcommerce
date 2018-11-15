@@ -1,8 +1,5 @@
 package classes;
 
-import dao.GameDAO;
-import java.util.ArrayList;
-
 public class Plataforma 
 {
     private int id;
@@ -22,10 +19,5 @@ public class Plataforma
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-    
-    public int countGames(int idGenero, int idDesenvolvedor)
-    {
-        return new GameDAO().selectCountByIDPlataforma(this.getId(), idGenero, idDesenvolvedor);
     }
 }
