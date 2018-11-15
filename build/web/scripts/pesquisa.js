@@ -42,6 +42,10 @@ function pesquisar() {
                 }
                 
                 $("#resultados").html(html);
+                
+                $(".table-resultados tbody tr").click(function(){
+                    location.href="produto?id=" + $(this).attr("data-produto");
+                });
             }
         });
     }

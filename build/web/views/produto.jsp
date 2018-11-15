@@ -1,11 +1,10 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="classes.Util"%>
 <%@page import="classes.Game"%>
-<%@page import="dao.GameDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <%
-    Game game = new GameDAO().selectGameByID(Integer.parseInt(request.getParameter("id")));
+    Game game = (Game) request.getAttribute("Game");
 %>
 
 <!DOCTYPE html>

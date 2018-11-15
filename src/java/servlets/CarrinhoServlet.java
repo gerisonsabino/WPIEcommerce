@@ -6,10 +6,12 @@ import classes.Game;
 import classes.ItemCarrinho;
 import com.google.gson.Gson;
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.ByteBuffer;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -88,7 +90,8 @@ public class CarrinhoServlet extends HttpServlet {
             if (conn.getResponseCode() != 200) {
                 throw new RuntimeException("Falhou : HTTP código de erro: " + conn.getResponseCode());
             }
-            BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+            
+            BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
             String output;
             String json = "";
             
