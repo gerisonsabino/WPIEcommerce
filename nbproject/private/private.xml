@@ -3,10 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Documentos/Visual%20Studio%202017/Projects/WPIEcommerce/nbproject/build-impl.xml</file>
-            <file>file:/D:/Documentos/Visual%20Studio%202017/Projects/WPIEcommerce/src/java/servlets/CarrinhoServlet.java</file>
-            <file>file:/D:/Documentos/Visual%20Studio%202017/Projects/WPIEcommerce/nbproject/build-impl.xml~</file>
-            <file>file:/D:/Documentos/Visual%20Studio%202017/Projects/WPIEcommerce/src/java/classes/Conexao.java</file>
+            <file>file:/D:/Documentos/Visual%20Studio%202017/Projects/WPIEcommerce/web/views/recomendacoes.jsp</file>
+            <file>file:/D:/Documentos/Visual%20Studio%202017/Projects/WPIEcommerce/web/assets/style.css</file>
+            <file>file:/D:/Documentos/Visual%20Studio%202017/Projects/WPIEcommerce/web/scripts/recomendacoes.js</file>
         </group>
     </open-files>
 </project-private>

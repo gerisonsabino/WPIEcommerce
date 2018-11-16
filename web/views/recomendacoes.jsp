@@ -19,6 +19,8 @@
 </head>
 
 <body>
+    <% out.println("<input type='hidden' id='cookie' value='" + request.getAttribute("cookie") + "'>"); %>
+    
     <!-- Search Wrapper Area Start -->
     <jsp:include page="parciais/pesquisa.jsp" />
     <!-- Search Wrapper Area End -->
@@ -32,51 +34,12 @@
         <div class="shop_sidebar_area">
             <div class="widget catagory mb-30">
                 <h6 class="widget-title mb-10">Você visualizou: </h6>
-                <div class="catagories-menu" id="div-jogos-visualizados">
-                    <%                
-                        out.println("<ul>");
-                        
-                        for (int i = 0; i < 10; i++) 
-                        {
-                            out.println("<li><a href='#'>Jogo Cookie "+ (i + 1) + "</a></li>");
-                        }
-                        
-                        out.println("</ul>");
-                    %>
-                </div>
+                <div class="catagories-menu" id="div-jogos-visualizados"></div>
             </div>
         </div>
         <div class="amado_product_area section-padding-100">
             <div class="container-fluid">
-                <div class="row" id="div-jogos-recomendados">
-                <%
-                    for (int i = 0; i < 5; i++) {
-                        out.println("<div class='col-12 col-sm-6 col-md-12 col-xl-6'>");
-                        out.println("    <div class='single-product-wrapper'>");
-                        out.println("        <div class='product-img'>");
-                        out.println("            <a href='produto.jsp?id=game.id'>");
-                        out.println("                <img src='game.imagemUrl' alt='game.titulo' />");
-                        out.println("            </a>");
-                        out.println("        </div>");
-                        out.println("        <div class='product-description d-flex align-items-center justify-content-between'>");
-                        out.println("            <div class='product-meta-data'>");
-                        out.println("                <div class='line'></div>");
-                        out.println("                <p class='product-price'>game.precoFormatado</p>");
-                        out.println("                <a href='produto.jsp?id=game.id'>");
-                        out.println("                    <h6>game.titulo - game.plataforma.nome</h6>");
-                        out.println("                </a>");
-                        out.println("            </div>");
-                        out.println("            <div class='ratings-cart text-right'>");
-                        out.println("                <div class='cart'>");
-                        out.println("                    <a href='#' data-toggle='tooltip' data-placement='left' title='Adicionar ao Carrinho'><img src='assets/img/core-img/cart.png' alt=''></a>");
-                        out.println("                </div>");
-                        out.println("            </div>");
-                        out.println("        </div>");
-                        out.println("    </div>");
-                        out.println("</div>");
-                    }
-                %>
-                </div>
+                <div class="row" id="div-jogos-recomendados"></div>
             </div>
         </div>
     </div>
@@ -91,5 +54,4 @@
     
     <script src="scripts/recomendacoes.js" type="text/javascript"></script>
 </body>
-
 </html>

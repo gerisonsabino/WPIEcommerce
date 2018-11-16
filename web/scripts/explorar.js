@@ -3,7 +3,6 @@ $(function () {
 });
 
 function listaGames() {
-   
     $.ajax({
         type: "GET",
         url: $("#ConexaoWS").val() + "/game/selectgames/" + $("#plataforma").val() +  "/" + $("#genero").val() + "/" + $("#desenvolvedor").val(),
@@ -29,7 +28,6 @@ function listaGames() {
                 html += "                </a>";
                 html += "            </div>";
                 html += "            <div class='ratings-cart text-right'>";
-
                 html += "                <div class='cart' data-add-carrinho='" + game.id + "' data-toggle='tooltip' data-placement='right' title='Adicionar ao Carrinho'>";
                 html += "                    <img src='assets/img/core-img/cart.png' alt='carrinho' />";
                 html += "                </div>";
@@ -49,5 +47,4 @@ function listaGames() {
             });
         }
     });
-    
 }
