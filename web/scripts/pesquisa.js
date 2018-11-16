@@ -4,7 +4,7 @@ function pesquisar() {
     if (termo != "" && termo != null) {
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/WSPIEcommerce/thisgame/game/pesquisargames/" + termo,
+            url: $("#ConexaoWS").val() + "/game/pesquisargames/" + termo,
             success: function(json) {
                 var html = "";
 

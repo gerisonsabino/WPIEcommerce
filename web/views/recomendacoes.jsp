@@ -1,4 +1,3 @@
-<%@page import="dao.GameDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="classes.Game"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -39,9 +38,7 @@
                         
                         for (int i = 0; i < 10; i++) 
                         {
-                            Game g = new GameDAO().selectGameByID(i + 1);
-                            
-                            out.println("<li><a href='#'>" + g.getTitulo() + "</a></li>");
+                            out.println("<li><a href='#'>Jogo Cookie "+ (i + 1) + "</a></li>");
                         }
                         
                         out.println("</ul>");
@@ -54,21 +51,19 @@
                 <div class="row" id="div-jogos-recomendados">
                 <%
                     for (int i = 0; i < 5; i++) {
-                        Game game = new GameDAO().selectGameByID(i + 1);
-                        
                         out.println("<div class='col-12 col-sm-6 col-md-12 col-xl-6'>");
                         out.println("    <div class='single-product-wrapper'>");
                         out.println("        <div class='product-img'>");
-                        out.println("            <a href='produto.jsp?id=" + game.getId() + "'>");
-                        out.println("                <img src='" + game.getImagemUrl() + "' alt='" + game.getTitulo() + "' />");
+                        out.println("            <a href='produto.jsp?id=game.id'>");
+                        out.println("                <img src='game.imagemUrl' alt='game.titulo' />");
                         out.println("            </a>");
                         out.println("        </div>");
                         out.println("        <div class='product-description d-flex align-items-center justify-content-between'>");
                         out.println("            <div class='product-meta-data'>");
                         out.println("                <div class='line'></div>");
-                        out.println("                <p class='product-price'>" + game.getPrecoFormatado() + "</p>");
-                        out.println("                <a href='produto.jsp?id=" + game.getId() + "'>");
-                        out.println("                    <h6>" + game.getTitulo() + " - " + game.getPlataforma().getNome() + "</h6>");
+                        out.println("                <p class='product-price'>game.precoFormatado</p>");
+                        out.println("                <a href='produto.jsp?id=game.id'>");
+                        out.println("                    <h6>game.titulo - game.plataforma.nome</h6>");
                         out.println("                </a>");
                         out.println("            </div>");
                         out.println("            <div class='ratings-cart text-right'>");
@@ -94,7 +89,7 @@
     <!-- ##### jQuery (Necessary for All JavaScript Plugins) ##### -->
     <jsp:include page="parciais/scripts.jsp" />
     
-    <script src="../scripts/recomendacoes.js" type="text/javascript"></script>
+    <script src="scripts/recomendacoes.js" type="text/javascript"></script>
 </body>
 
 </html>

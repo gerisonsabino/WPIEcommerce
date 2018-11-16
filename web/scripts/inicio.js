@@ -5,7 +5,7 @@ $(document).ready(function(){
 function vitrine() { 
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/WSPIEcommerce/thisgame/game/selectgamesrandom/30/",
+        url: $("#ConexaoWS").val() + "/game/selectgamesrandom/30/",
         success: function(json) {
             var html = "";
     

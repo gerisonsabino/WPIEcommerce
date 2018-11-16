@@ -6,7 +6,7 @@ function listaGames() {
    
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/WSPIEcommerce/thisgame/game/selectgames/" + $("#plataforma").val() +  "/" + $("#genero").val() + "/" + $("#desenvolvedor").val(),
+        url: $("#ConexaoWS").val() + "/game/selectgames/" + $("#plataforma").val() +  "/" + $("#genero").val() + "/" + $("#desenvolvedor").val(),
         success: function(json) {
             var html = "";
     

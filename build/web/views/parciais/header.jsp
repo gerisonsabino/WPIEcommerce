@@ -1,3 +1,4 @@
+<%@page import="classes.Conexao"%>
 <%@page import="classes.Carrinho"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -46,10 +47,10 @@
                     out.println("<span>(0)</span>");
                 }
             %>
-            
         </a>
     </div>
     <div class="amado-btn-group mt-30 mb-100">
         <a href="recomendacoes" class="btn amado-btn mb-15">Recomendações</a>
     </div>
+    <input type="hidden" value="<% out.print(Conexao.getWSConnection()); %>" id="ConexaoWS" name="ConexaoWS" />
 </header>

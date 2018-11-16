@@ -15,11 +15,7 @@ public class RecomendacoesServlet extends HttpServlet {
     {
         try 
         {
-            //LER COOKIE
-            
-            //Pegar JSON no WEB SERVICE
-
-            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/recomendacoes.jsp?id=0");
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/views/recomendacoes.jsp");
             dispatcher.forward(request, response);
         }
         catch (Exception e) 

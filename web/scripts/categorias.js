@@ -12,7 +12,7 @@ function listarPlataformas() {
     if (idP > 0) {
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/WSPIEcommerce/thisgame/plataforma/selectplataformabyid/" + idP,
+            url: $("#ConexaoWS").val() + "/plataforma/selectplataformabyid/" + idP,
             success: function(plataforma) {
                 var html = "";
 
@@ -29,7 +29,7 @@ function listarPlataformas() {
     {
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/WSPIEcommerce/thisgame/plataforma/selectplataformas/",
+            url: $("#ConexaoWS").val() + "/plataforma/selectplataformas/",
             success: function(json) {
                 var html = "";
 
@@ -59,7 +59,7 @@ function getCountPlataformas() {
         
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/WSPIEcommerce/thisgame/game/selectcountbyidplataforma/" + id + "/" + idG + "/" + idD,
+            url: $("#ConexaoWS").val() + "/game/selectcountbyidplataforma/" + id + "/" + idG + "/" + idD,
             success: function(json) {
                 $(small).text(" (" + json.count + ")");
             }
@@ -71,7 +71,7 @@ function listarGeneros() {
     if (idG > 0) {
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/WSPIEcommerce/thisgame/genero/selectgenerobyid/" + idG,
+            url: $("#ConexaoWS").val() + "/genero/selectgenerobyid/" + idG,
             success: function(genero) {
                 var html = "";
 
@@ -88,7 +88,7 @@ function listarGeneros() {
     {
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/WSPIEcommerce/thisgame/genero/selectgeneros/",
+            url: $("#ConexaoWS").val() + "/genero/selectgeneros/",
             success: function(json) {
                 var html = "";
 
@@ -119,7 +119,7 @@ function getCountGeneros() {
         
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/WSPIEcommerce/thisgame/game/selectcountbyidgenero/" + id + "/" + idP + "/" + idD,
+            url: $("#ConexaoWS").val() + "/game/selectcountbyidgenero/" + id + "/" + idP + "/" + idD,
             success: function(json) {
                 $(small).text(" (" + json.count + ")");
             }
@@ -131,7 +131,7 @@ function listarDesenvolvedores() {
     if (idD > 0) {
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/WSPIEcommerce/thisgame/desenvolvedor/selectdesenvolvedorbyid/" + idD,
+            url: $("#ConexaoWS").val() + "/desenvolvedor/selectdesenvolvedorbyid/" + idD,
             success: function(desenvolvedor) {
                 var html = "";
 
@@ -148,7 +148,7 @@ function listarDesenvolvedores() {
     {
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/WSPIEcommerce/thisgame/desenvolvedor/selectdesenvolvedores/",
+            url: $("#ConexaoWS").val() + "/desenvolvedor/selectdesenvolvedores/",
             success: function(json) {
                 var html = "";
 
@@ -179,7 +179,7 @@ function getCountDesenvolvedores() {
         
         $.ajax({
             type: "GET",
-            url: "http://localhost:8080/WSPIEcommerce/thisgame/game/selectcountbyiddesenvolvedor/" + id + "/" + idG + "/" + idP,
+            url: $("#ConexaoWS").val() + "/game/selectcountbyiddesenvolvedor/" + id + "/" + idG + "/" + idP,
             success: function(json) {
                 $(small).text(" (" + json.count + ")");
             }
