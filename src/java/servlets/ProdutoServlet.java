@@ -44,7 +44,6 @@ public class ProdutoServlet extends HttpServlet {
             } 
             else 
             {
-                String a = cookie.getValue();
                 ArrayList<String> ids = new ArrayList<>();
                 ids = new Gson().fromJson(cookie.getValue(), ids.getClass());
                 

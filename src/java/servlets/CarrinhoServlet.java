@@ -10,9 +10,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,8 +30,44 @@ public class CarrinhoServlet extends HttpServlet {
         
         if (request.getParameter("add") != null) 
         {
-            int idGame = Integer.parseInt(request.getParameter("idGame"));
-            carrinho = add(carrinho, idGame);
+            Integer id = Integer.parseInt(request.getParameter("idGame"));
+            
+            //REGISTRAR NO COOKIE
+            Cookie cookie = null;
+
+            for (Cookie c : request.getCookies()) {
+                if (c.getName().equals("idgames")) {
+                    cookie = c;
+                }
+            }
+
+            if (cookie == null) 
+            {
+                cookie = new Cookie("idgames", "[\"" + id + "\"]");
+                cookie.setMaxAge(606024 * 31);
+            } 
+            else 
+            {
+                ArrayList<String> ids = new ArrayList<>();
+                ids = new Gson().fromJson(cookie.getValue(), ids.getClass());
+                
+                boolean b = false;
+                for (int i = 0; i < ids.size(); i++) {
+                    if (ids.get(i).toString().equals(id.toString())) {
+                        b = true;
+                    }
+                }
+                
+                if (!b) {
+                    ids.add(id.toString());
+                }
+                
+                cookie.setValue(new Gson().toJson(ids));
+            }
+            
+            response.addCookie(cookie);
+            
+            carrinho = add(carrinho, id);
         }
         else if (request.getParameter("remove") != null) 
         {

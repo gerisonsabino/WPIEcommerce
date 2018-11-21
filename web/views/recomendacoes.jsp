@@ -43,6 +43,10 @@
             </div>
         </div>
     </div>
+    <form id="addcarrinho" action="carrinho" method="post">
+        <input type="hidden" id="add" name="add" value="add"/>
+        <input type="hidden" id="idGame" name="idGame" value=""/>
+    </form>
     <!-- ##### Main Content Wrapper End ##### -->
 
     <!-- ##### Footer Area Start ##### -->
